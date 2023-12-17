@@ -9,6 +9,9 @@ echo -e "${yellow}Este script instalará yt-dlp, ffmpeg y las dependencias neces
 
 sleep 2
 
+echo -e "\n${yellow}Solicitando permisos de almacenamiento y escritura...${reset}"
+termux-setup-storage
+
 echo -e "\n${yellow}Instalando python y pip...${reset}"
 pkg install -y python
 
@@ -17,9 +20,6 @@ pip install --upgrade yt-dlp
 
 echo -e "\n${yellow}Instalando ffmpeg...${reset}"
 pkg install -y ffmpeg
-
-echo -e "\n${yellow}Solicitando permisos de almacenamiento y escritura...${reset}"
-termux-setup-storage
 
 download_folder="/sdcard/Download/yt-dlp"
 mkdir -p "$download_folder"
